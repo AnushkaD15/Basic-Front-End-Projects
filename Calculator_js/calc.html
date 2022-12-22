@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+
+    <style>
+        body {
+            text-align: center;
+            background-color: #effdff;
+            margin: 180px;
+        }
+
+        form {
+            text-align: center;
+            margin-left: 400px;
+        }
+
+        input[type="button"] {
+            min-width: 80px;
+            margin-top: 10px;
+        }
+
+        input[type="text"] {
+            min-width: 350px;
+            min-height: 50px;
+        }
+    </style>
+
+    <script>
+        function calculate(calculator) {
+            if (calculator.display.value.includes("!")) {
+                var s = calculator.display.value.length;
+                var n = Number(calculator.display.value.substring(0, s - 1));
+                f = 1;
+                for (i = 2; i <= n; i++) {
+                    f = f * t;
+                }
+                calculator.display.value = f;
+            }
+            else {
+                calculator.display.value = eval(calculator.display.value);
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <form name="calculator">
+        <table id="calculator">
+            <td>
+                <input type="test" name="display" id="display">
+                <br>
+                <input type="button" value="1" onclick="calculator.display.value += '1'">
+                <input type="button" value="2" onclick="calculator.display.value += '2'">
+                <input type="button" value="3" onclick="calculator.display.value += '3'">
+                <input type="button" value="+" onclick="calculator.display.value += '+'">
+                <br>
+                <input type="button" value="4" onclick="calculator.display.value += '4'">
+                <input type="button" value="5" onclick="calculator.display.value += '5'">
+                <input type="button" value="6" onclick="calculator.display.value += '6'">
+                <input type="button" value="-" onclick="calculator.display.value += '-'">
+                <br>
+                <input type="button" value="7" onclick="calculator.display.value += '7'">
+                <input type="button" value="8" onclick="calculator.display.value += '8'">
+                <input type="button" value="9" onclick="calculator.display.value += '9'">
+                <input type="button" value="*" onclick="calculator.display.value += '*'">
+                <br>
+                <input type="button" value="0" onclick="calculator.display.value += '0'">
+                <input type="button" value="(" onclick="calculator.display.value += '('">
+                <input type="button" value=")" onclick="calculator.display.value += ')'">
+                <input type="button" value="/" onclick="calculator.display.value += '/'">
+                <br>
+                <input type="button" value="sin" onclick="calculator.display.value += 'Math.sin'">
+                <input type="button" value="cos" onclick="calculator.display.value += 'Math.cos'">
+                <input type="button" value="tan" onclick="calculator.display.value += 'Math.tan'">
+                <input type="button" value="log" onclick="calculator.display.value += 'Math.log'">
+                <br>
+                <input type="button" value="!" onclick="calculator.display.value += '!'">
+                <input type="button" value="AC" onclick="calculator.display.value = ''">
+                <input type="button" value="." onclick="calculator.display.value += '.'">
+                <input type="button" value="=" onclick="calculate(this.form)">
+            </td>
+        </table>
+
+    </form>
+</body>
